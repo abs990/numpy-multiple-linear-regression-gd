@@ -33,8 +33,15 @@ def shuffle_xy(X, y, seed=42):
 
     return X[indices], y[indices]
 
-# Step 2 - split_train_val_test (not yet solved)
-# TODO: implement
+# Step 2 - split_train_val_test
+def split_train_val_test(X, y, train_frac=0.6, val_frac=0.2):
+    # Slice already-shuffled data into contiguous train/val/test partitions...
+    
+    n = X.shape[0]
+    lim1 = int(n * train_frac)
+    lim2 = lim1 + int(n * val_frac)
+
+    return X[:lim1], y[:lim1], X[lim1:lim2], y[lim1:lim2], X[lim2:], y[lim2:]
 
 # Step 3 - compute_feature_stats (not yet solved)
 # TODO: implement
