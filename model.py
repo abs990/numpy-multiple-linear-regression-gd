@@ -58,8 +58,10 @@ def standardize_features(X, mean, std):
     # Apply z-score normalization using precomputed training mean and std.
     return (X - mean[None, :]) / std[None, :]
 
-# Step 5 - add_bias_column (not yet solved)
-# TODO: implement
+# Step 5 - add_bias_column
+def add_bias_column(X):
+    # Prepend a column of ones to feature matrix X
+    return np.column_stack((np.ones(X.shape[0]), X))
 
 # Step 6 - prepare_design_matrix (not yet solved)
 # TODO: implement
