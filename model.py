@@ -252,8 +252,10 @@ def learning_curve_data(train_losses, val_losses):
 
     return np.arange(1, 1 + len(train_losses)).tolist(), train_losses, val_losses
 
-# Step 23 - weights_l2_distance (not yet solved)
-# TODO: implement
+# Step 23 - weights_l2_distance
+def weights_l2_distance(w_gd, w_closed):
+    # Compute the L2 distance between two weight vectors
+    return np.linalg.norm(w_gd - w_closed)
 
 # Step 24 - create_lr_model (not yet solved)
 # TODO: implement
